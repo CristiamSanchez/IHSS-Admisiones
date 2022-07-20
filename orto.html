@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fill Me In">
+    <meta name="author" content="Cristiam Sanchez">
+
+    <title>Admisiones IHSS.</title>
+
+    <!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging when a phone is turned sideways-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+
+    <!-- STYLE SHEETS -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="css/large.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- HEADER HERE -->
+    <header class="clearfix">
+        <!-- Logo was downloaded from: https://stock.adobe.com/ for free-->
+        <!-- <figure class="logo">
+            <img src="img/ihss.png" alt="logo" srcset="img/ihss.png 1x, img/ihss.png 2x, img/ihss.png 3x">
+        </figure> -->
+        <h1>Admisiones IHSS</h1>
+        <h5>Control Ausencias y Programacion de consulta externa</h5>
+    </header>
+
+    <!-- NAVIGATION HERE -->
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+            
+             <li><a href="gine.html">Ginecologia</a></li> 
+            <li><a href="pedia.html">Pediatria</a></li> 
+            <li class="active"><a href="orto.html">Ortopedia</a></li> 
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="index.html">Ausencias</a></li> 
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+     <main>
+         
+           <!-- INICIO-->
+
+               <input type="button" class="btn btn-outline-success ml-2 float-md-left m-1" value="Actualizar" onclick="location.reload()"/>
+
+                <!--FIN -->
+
+         <!-- Segunda tabla -->
+              <div class="card mt-2 col-12" id="card2">
+                <div class="float-right bg-dark">
+                    <form>  
+                      <a class="font-weight-bold text-uppercase text-white"> Texto a buscar :</a>
+                      <input id="searchItem" type="text" onkeyup="doSeek()" />
+                    </form>
+                </div>
+                <table id="tablaOrto" class="table table-striped table-hover table-sm">
+                <thead>
+                  <tr class="bg-dark text-light">
+                    <th scope="col">MEDICO</th>
+                    <th scope="col">JORNADA</th>
+                    <th scope="col">#PX</th>
+                    <th scope="col">LUNES</th>
+                    <th scope="col">MARTES</th> 
+                    <th scope="col">MIERCOLES</th> 
+                    <th scope="col">JUEVES</th> 
+                    <th scope="col">VIERNES</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>JUAN RAMON HASBUN</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                  </tr>
+                  <tr>
+                    <td>JANIO FLORENTINO SALGADO</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                  </tr>
+                  <tr>
+                    <td>HECTOR ORTEZ</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>JADER ABUMOHOR</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>SALA</td>
+                    <td>SOP</td>
+                    <td>SALA</td>
+                    <td>SOP</td>
+                    <td>SALA</td>
+                  </tr>
+                  <tr>
+                    <td>MIGUEL ANGEL LOPEZ</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>MANUEL ANTONIO CRUZ</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>CEXT</td>
+                    <td>EMER</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>JOSE CARLOS ALCERRO</td>
+                    <td>MAT</td>
+                    <td>20</td>
+                    <td>EMER</td>
+                    <td>SOP</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                  </tr>
+                  <tr>
+                    <td>EDMUNDO LIZARDO</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>UCA</td>
+                    <td>UCA</td>
+                    <td>UCA</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>SANTOS RUFINO MOLINA</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>UCA</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>HORACIO ORTEGA</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>UCA</td>
+                  </tr>
+                  <tr>
+                    <td>WILLIAM BRACAMONTE</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>CARLOS ARTURO PEREZ</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr>
+                    <td>RAFAEL NASSER</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                    <td>EMER</td>
+                  </tr>
+                  <tr>
+                    <td>CARLOS DEL CID</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                  </tr> 
+                  <tr>
+                    <td>ELVIN RODAS</td>
+                    <td>VESP</td>
+                    <td>MANO</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>SOP</td>
+                    <td>24</td>
+                    <td>SOP</td>
+                  </tr>
+                  <tr>
+                    <td>MANUEL SAMAYOA</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                  </tr>
+                  <tr>
+                    <td>WALTHER RODRIGUEZ</td>
+                    <td>VESP</td>
+                    <td>24</td>
+                    <td>CEXT</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td>JORGE MARIO ELVIR</td>
+                    <td colspan="7" class="text-center">******* GERENTE INTERINO ORTOPEDIA *******</td> 
+                  </tr>
+                  <tr class="table-info">
+                    <td>JUAN ANGEL BUSTILLO</td>
+                    <td colspan="7" class="text-center">******* SALA DE ORTOPEDIA *******</td> 
+                  </tr>
+                  <tr class="table-warning">
+                    <td>ALMA IRIS CASTILLO</td>
+                    <td>VESP PEDIA</td>
+                    <td>16</td>
+                    <td>SOP</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                    <td>CEXT</td>
+                  </tr> 
+                </tbody>
+                </table>
+              </div>
+               
+                <!-- Fin segunda tabla -->
+
+
+     </main>
+
+         <!-- Optional JavaScript --> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script> 
+                
+    <!--The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
+
+    <script>
+
+        function doSeek(){
+            const tableReg = document.getElementById('tablaOrto');
+            const searchText = document.getElementById('searchItem').value.toLowerCase();
+            let total = 0;
+            // Recorremos todas las filas con contenido de la tabla
+            for (let i = 1; i < tableReg.rows.length; i++) {
+                // Si el td tiene la clase "noSearch" no se busca en su cntenido
+                if (tableReg.rows[i].classList.contains("noSearch")) {
+                    continue;
+                }
+                let found = false;
+                const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                // Recorremos todas las celdas
+                for (let j = 0; j < cellsOfRow.length && !found; j++) {
+                    const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                    // Buscamos el texto en el contenido de la celda
+                    if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+                        found = true;
+                        total++;
+                    }
+                }
+                if (found) {
+                    tableReg.rows[i].style.display = '';
+                } else {
+                    // si no ha encontrado ninguna coincidencia, esconde la
+                    // fila de la tabla
+                    tableReg.rows[i].style.display = 'none';
+                }
+            }
+            // mostramos las coincidencias
+            const lastTR=tableReg.rows[tableReg.rows.length-1];
+            const td=lastTR.querySelector("td");
+            lastTR.classList.remove("hide", "red");
+            if (searchText == "") {
+                lastTR.classList.add("hide");
+            } 
+        }
+
+    </script>
+    <!-- FOOTER HERE -->
+    <footer>
+        &copy; &bull; Instituto Hondureño de Seguridad Social &bull; 
+    </footer>
+   <!--  <script src="js/scripts.js"></script>
+    <script src="js/reader.js"></script> -->
+    
+</body>
+
+</html>

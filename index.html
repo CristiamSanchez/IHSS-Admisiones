@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fill Me In">
+    <meta name="author" content="John Doe">
+
+
+    <title>Admisiones IHSS.</title>
+
+    <!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging when a phone is turned sideways-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Link datatables -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.semanticui.min.css"> 
+    <!-- FiN Link datatables -->
+
+    <!-- STYLE SHEETS -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="css/large.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+</head>
+
+<body>
+    <!-- HEADER HERE -->
+    <header class="clearfix">
+        <!-- Logo was downloaded from: https://stock.adobe.com/ for free-->
+        <!-- <figure class="logo">
+            <img src="img/ihss.png" alt="logo"
+                srcset="img/ihss.png 1x, img/ihss.png 2x, img/ihss.png 3x">
+        </figure> -->
+        <h1>Admisiones IHSS</h1>
+        <h5>Control Ausencias y Programacion de consulta externa</h5>
+    </header>
+
+    <!-- NAVIGATION HERE -->
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+
+             <li><a href="gine.html">Ginecologia</a></li> 
+            <li><a href="pedia.html">Pediatria</a></li> 
+            <li><a href="orto.html">Ortopedia</a></li> 
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li class="active"><a href="index.html">Ausencias</a></li>
+
+        </ul>
+    </nav>
+
+
+    <!-- MAIN -->
+    <main>
+     
+                <!-- INICIO-->
+
+               <input type="button" class="btn btn-outline-success ml-2 float-md-left m-1" value="Actualizar" onclick="location.reload()"/>
+
+                <!--FIN -->
+
+              <!--Modal-->
+              <div class="card mt-2 col-12" id="card3">
+                <div id="modalAltaEdicion" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary text-light">
+                                <h5 class="modal-title" id="exampleModalLabel">Alta / Edición</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                                <form>
+                                <div class="modal-body">
+                                    <input id="id" type="hidden"> 
+                                    <div class="form-group">                                    
+                                      <label>PROFESIONAL</label>
+                                      <input id="codigo" type="text" class="form-control" required>
+                                    </div>    
+                                    <div class="form-group">
+                                      <label>TIPO AUSENCIA</label>
+                                      <input id="descripcion" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <label>FECHAS</label>
+                                      <input id="cantidad" type="text" class="form-control" required>
+                                    </div>                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" tabindex="2">Cancelar</button>
+                                    <button type="submit" id="btnGuardar" class="btn btn-primary" translate="1">Guardar</button>
+                                </div> 
+                               </form>
+                    </div>
+                </div>
+                </div>
+  
+                <div class="float-right bg-dark">
+                    <form>  
+                      <a class="font-weight-bold text-uppercase text-white"> Texto a buscar :</a>
+                      <input id="searchItem2" type="text" onkeypress="doSeek2(event)" />
+                    </form>
+                </div> 
+                <table id="tablaProductos" class="table table-striped table-hover table-sm">
+                <thead>
+                  <tr class="bg-secondary text-light">
+                    <th scope="col">PROFESIONAL</th>
+                    <th scope="col">TIPO AUSENCIA</th>
+                    <th scope="col">FECHAS</th> 
+                  </tr>
+                </thead>
+              <tbody id="bodyProductos">
+              </tbody>
+              </table>
+            
+              </div>
+
+             
+          
+
+      
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+    <!-- links para datatables-->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script> 
+    <!-- FiN links para datatables-->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script> 
+                
+    <!--The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
+
+    </main> 
+    
+    <script>
+
+
+
+
+         function doSeek2(e){ 
+
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla==13){ 
+                //alert ('Has pulsado enter');
+            } else{
+                const tableReg = document.getElementById('tablaProductos');
+            const searchText = document.getElementById('searchItem2').value.toLowerCase();
+            let total = 0;
+            // Recorremos todas las filas con contenido de la tabla
+            for (let i = 1; i < tableReg.rows.length; i++) {
+                // Si el td tiene la clase "noSearch" no se busca en su cntenido
+                if (tableReg.rows[i].classList.contains("noSearch")) {
+                    continue;
+                }
+                let found = false;
+                const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                // Recorremos todas las celdas
+                for (let j = 0; j < cellsOfRow.length && !found; j++) {
+                    const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                    // Buscamos el texto en el contenido de la celda
+                    if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+                        found = true;
+                        total++;
+                    }
+                }
+                if (found) {
+                    tableReg.rows[i].style.display = '';
+                } else {
+                    // si no ha encontrado ninguna coincidencia, esconde la
+                    // fila de la tabla
+                    tableReg.rows[i].style.display = 'none';
+                }
+            }
+            // mostramos las coincidencias
+            const lastTR=tableReg.rows[tableReg.rows.length-1];
+            const td=lastTR.querySelector("td");
+            lastTR.classList.remove("hide", "red");
+            if (searchText == "") {
+                lastTR.classList.add("hide");
+            } else if (total) {
+               // td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+            } else {
+                lastTR.classList.add("red");
+                //td.innerHTML="No se han encontrado coincidencias";
+            } 
+
+            }
+            
+        }
+   
+   </script>
+
+    <!-- FOOTER HERE -->
+    <footer>
+        &copy; &bull; Instituto Hondureño de Seguridad Social &bull; 
+    </footer>
+    <script src="js/scripts.js"></script>
+  
+   
+</body>
+
+</html>

@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fill Me In">
+    <meta name="author" content="John Doe">
+
+
+    <title>Admisiones IHSS.</title>
+
+    <!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging when a phone is turned sideways-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- STYLE SHEETS -->
+    <link href="css/normalize.css" rel="stylesheet">
+    <!-- phone-default -->
+    <link href="css/small.css" rel="stylesheet">
+    <!-- enhance-tablet -->
+    <link href="css/medium.css" rel="stylesheet">
+    <!-- enhance-desktop -->
+    <link href="css/large.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- HEADER HERE -->
+    <header class="clearfix">
+        <!-- Logo was downloaded from: https://stock.adobe.com/ for free-->
+        <!-- <figure class="logo">
+            <img src="img/ihss.png" alt="logo" srcset="img/ihss.png 1x, img/ihss.png 2x, img/ihss.png 3x">
+        </figure> -->
+         <h1>Admisiones IHSS</h1>
+        <h5>Control Ausencias y Programacion de consulta externa</h5>
+    </header>
+
+    <!-- NAVIGATION HERE -->
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primaryNav" class="hide">
+            <li><a href="gine.html">Ginecologia</a></li> 
+            <li><a href="pedia.html">Pediatria</a></li> 
+            <li><a href="orto.html">Ortopedia</a></li> 
+            <li class="active"><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="index.html">Ausencias</a></li>
+
+        </ul>
+    </nav>
+
+
+    <!-- MAIN -->
+     <main>
+         
+               <!-- INICIO-->
+
+               <input type="button" class="btn btn-outline-success ml-2 float-md-left m-1" value="Actualizar" onclick="location.reload()"/>
+
+                <!--FIN -->
+
+            <!-- Tercera tabla --> 
+              <div class="card mt-2 col-12" id="card3">
+                 <div class="float-right bg-dark">
+                    <form>  
+                      <a class="font-weight-bold text-uppercase text-white"> Texto a buscar :</a>
+                      <input id="searchItem3" type="text" onkeyup="doSeek3()" /> <code>* + Procedimientos</code>
+                    </form>
+                </div> 
+                <table id="tablaEspecialidades" class="table table-striped table-hover table-sm">
+                <thead>
+                  <tr class="bg-secondary text-light">
+                    <th scope="col">MEDICO</th>
+                    <th scope="col">JORNADA</th>
+                    <!-- <th scope="col">#PX</th> -->
+                    <th scope="col">ESPECIALIDAD</th>
+                    <th scope="col">Lunes</th> 
+                    <th scope="col">Martes</th> 
+                    <th scope="col">Miercoles</th> 
+                    <th scope="col">Jueves</th> 
+                    <th scope="col">Viernes</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>YADIRA ALVAREZ</td>
+                    <td>MAT</td> 
+                    <td>MED INTERNA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DAVID OCAMPO</td>
+                    <td>MAT</td>
+                    <td>MED INTERNA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>ANA URRACO</td>
+                    <td>MAT</td> 
+                    <td>MED INTERNA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td><mark>ALBERTO DIAZ</mark></td>
+                    <td>MAT</td> 
+                    <td>MED INTERNA</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>24</td> 
+                  </tr>
+                  <tr>
+                    <td><mark>ALEXIS RIVAS</mark></td>
+                    <td>MAT</td> 
+                    <td>MED INTERNA</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td><mark>LOYDA ACOSTA</mark></td>
+                    <td>MAT</td> 
+                    <td>MED INTERNA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>INCIA ORELLANA</td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>MARLON CRUZ</td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>JESSICA FLORES</td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td><code>24</code></td>
+                    <td><code>24</code></td>
+                    <td><code>24</code></td>
+                    <td><code>24</code></td>
+                    <td><code>24</code></td>
+                  </tr>
+                  <tr>
+                    <td><mark>GUSTAVO GOMEZ</mark></td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>KAREN PINEDA</td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td><mark>SANTOS EDGARDO</mark></td> 
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>24</td>
+                    <td>16</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td>DRA PERDOMO</td>
+                    <td>VESP</td> 
+                    <td>MED INTERNA</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>CARLOS MENDOZA</td>
+                    <td>MAT</td> 
+                    <td>CIR. GENERAL</td>
+                    <td></td>
+                    <td>18+2</td>
+                    <td></td>
+                    <td>18+2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>MAURICIO PAREDES</td>
+                    <td>MAT</td> 
+                    <td>CIR. GENERAL</td>
+                    <td>8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>FANNY NAVAS</td>
+                    <td>MAT</td> 
+                    <td>CIR. GENERAL</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><mark>HERNAN SORTO</mark></td>  
+                    <td>VESP</td> 
+                    <td>CIR. GENERAL</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>CARLOS GUERRA</td>
+                    <td>VESP</td> 
+                    <td>CIR. GENERAL</td>
+                    <td>18+2</td>
+                    <td></td>
+                    <td>18+2</td>
+                    <td>18+2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>CLAUDIA CORTES</td>
+                    <td>VESP</td> 
+                    <td>CIR. GENERAL</td>
+                    <td>12+2</td>
+                    <td>12+2</td>
+                    <td></td>
+                    <td></td>
+                    <td>12+2</td>
+                  </tr>
+                  <tr>
+                    <td>ELVIN SORIANO</td>
+                    <td>VESP</td> 
+                    <td>CIR. GENERAL</td>
+                    <td></td>
+                    <td>18+2</td>
+                    <td></td>
+                    <td>18+2</td>
+                    <td>18+2</td>
+                  </tr>
+                  <tr>
+                    <td>MELVIN CASTILLO</td>
+                    <td>MAT</td> 
+                    <td>CIR. VASCULAR</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DRA D'ACOSTA</td>
+                    <td>MAT</td> 
+                    <td>CIR. VASCULAR</td>
+                    <td></td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td></td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>ANA P. RUEDA</td>
+                    <td>MAT</td> 
+                    <td>CIR. VASCULAR</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>YASER RIZZO</td>
+                    <td>VESP</td> 
+                    <td>CIR. VASCULAR</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>AGUILAR PAREDES</td>
+                    <td>MAT</td> 
+                    <td>OTORRINO</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DRA ALVARENGA</td>
+                    <td>MAT</td> 
+                    <td>OTORRINO</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DR AGUERO</td>
+                    <td>MAT</td> 
+                    <td>OTORRINO</td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>LIA AGUILERA</td>
+                    <td>MAT</td> 
+                    <td>OTORRINO</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>JACOBO BATRES</td>
+                    <td>MAT</td> 
+                    <td>OTORRINO</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DR FIALLOS</td>
+                    <td>MAT</td> 
+                    <td>UROLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>10</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>DR FAJARDO</td>
+                    <td>MAT</td> 
+                    <td>UROLOGIA</td>
+                    <td></td>
+                    <td></td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>DR GERNAT</td>
+                    <td>MAT</td> 
+                    <td>UROLOGIA</td>
+                    <td></td>
+                    <td></td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>JAVIER FLORES</td>
+                    <td>MAT</td> 
+                    <td>UROLOGIA</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>DR MOREIRA</td>
+                    <td>VESP</td> 
+                    <td>UROLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>DR RUIZ</td>
+                    <td>VESP</td> 
+                    <td>UROLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>MOISES NAZAR</td>
+                    <td>MAT</td> 
+                    <td>NEUROCIRUGIA</td>
+                    <td></td>
+                    <td></td>
+                    <td>4</td>
+                    <td></td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>LENIN VELASQUEZ</td>
+                    <td>MAT</td> 
+                    <td>NEUROCIRUGIA</td>
+                    <td></td>
+                    <td>12</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>KARLA OCHOA</td>
+                    <td>VESP</td> 
+                    <td>NEUROCIRUGIA</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>BIENST MEINHARD</td>
+                    <td>VESP</td> 
+                    <td>NEUROCIRUGIA</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>JORGE RODRIGUEZ</td>
+                    <td>MAT</td> 
+                    <td>CIR. ONCOLOGICA</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>RAUL SANCHEZ</td>
+                    <td>VESP</td> 
+                    <td>CIR. ONCOLOGICA</td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>DANIELSON ANTUNEZ</td>
+                    <td>VESP</td> 
+                    <td>CIR. ONCOLOGICA</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>MARIA TERESA ANDARA</td>
+                    <td>MAT</td> 
+                    <td>GASTROENTEROLOGIA</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>MIGUEL CHACON</td>
+                    <td>VESP</td> 
+                    <td>GASTROENTEROLOGIA</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>CESAR HENRIQUEZ</td>
+                    <td>MAT</td> 
+                    <td>CIR. RECONSTR.</td>
+                    <td>20</td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>RICCI CANALES</td>
+                    <td>VESP</td> 
+                    <td>CIR. RECONSTR.</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>DR CHEREFANT</td>
+                    <td>VESP</td> 
+                    <td>CIR. RECONSTR.</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>OSMAN CARCAMO</td>
+                    <td>VESP</td> 
+                    <td>CIR. R. MAXILOFACIAL</td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                    <td>20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>DR MONCADA</td>
+                    <td>MAT</td> 
+                    <td>CARDIOLOGIA</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                  </tr>
+                  <tr> 
+                    <td><mark>RAFAEL RAMIREZ**</mark></td>
+                    <td>MAT</td> 
+                    <td>CARDIOLOGIA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><mark>LENIN BULNES</mark></td>
+                    <td>MAT</td> 
+                    <td>CARDIOLOGIA</td>
+                    <td>LI</td>
+                    <td>CEN</td>
+                    <td>CIA</td>
+                    <td>1</td>
+                    <td>AñO</td>
+                  </tr>
+                  <tr>
+                    <td>DRA INESTROZA</td>
+                    <td>VESP</td> 
+                    <td>CARDIOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td></td> 
+                  </tr>
+                  <tr>
+                    <td>DRA BARRIENTOS</td>
+                    <td>VESP</td> 
+                    <td>CARDIOLOGIA</td>
+                    <td>HEMO</td>
+                    <td>DINA</td>
+                    <td>MIA</td>
+                    <td></td>
+                    <td></td> 
+                  </tr>
+                  <tr>
+                    <td><mark>ELGA CODINA</mark></td> 
+                    <td>MAT</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>HUGO ALONZO</td>
+                    <td>MAT</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>SANTIAGO PASTELINI</td>
+                    <td>MAT</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>VICTOR CUELLAR</td>
+                    <td>VESP</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr> 
+                  <tr>
+                    <td>G-SANCHEZ</td>
+                    <td>VESP</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>*</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                   <tr>
+                    <td>K-ALVAREZ</td>
+                    <td>VESP</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td><mark>KRISTEN ALVARADO</mark></td> 
+                    <td>VESP</td> 
+                    <td>REUMATOLOGIA</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                  </tr>  
+                   <tr>
+                    <td><mark>ENGELS SNIDER FIGUEROA</mark></td>
+                    <td>VESP</td> 
+                    <td>CUIDADOS PALEA.</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                  </tr>  
+                  <tr>
+                    <td>GASPAR RODRIGUEZ</td>
+                    <td>MAT</td> 
+                    <td>NEFROLOGIA</td>
+                    <td>DI</td>
+                    <td>REC</td>
+                    <td>TOR</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>FLOR DE MARIA VALLADARES</td>
+                    <td>MAT</td> 
+                    <td>NEFROLOGIA</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td><mark>DR MARCO TULIO LUQUE</mark></td> 
+                    <td>MAT</td> 
+                    <td>INFECTOLOGIA</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                    <td>8</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><mark>DR GOMEZ</mark></td> 
+                    <td>MAT</td> 
+                    <td>INFECTOLOGIA</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>16</td>
+                  </tr> 
+                  <tr>
+                    <td>DRA CHANDIA</td>
+                    <td>MAT</td> 
+                    <td>NEUMOLOGIA</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                  </tr>  
+                  <tr>
+                    <td>DR PONCE</td>
+                    <td>MAT</td> 
+                    <td>ENDOCRINOLOGIA</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>8</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DRA OLGA MONCADA</td>
+                    <td>MAT</td> 
+                    <td>ENDOCRINOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DR OBED URQUIA</td>
+                    <td>MAT</td> 
+                    <td>ENDOCRINOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>DR ORDOñEZ</td>
+                    <td>VESP</td> 
+                    <td>ENDOCRINOLOGIA</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td><mark>KARLA BORJAS</mark></td>  
+                    <td>VESP</td> 
+                    <td>INMUNOLOGIA</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tr> 
+                  <tr>
+                    <td>LINDA SAMANTA MEJIA</td>
+                    <td>MAT</td> 
+                    <td>COLOPROCTOLOGIA</td>
+                    <td>8 + 2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>8 + 2</td>
+                  </tr>
+                  <tr>
+                    <td>DRA MARIA SANCHEZ</td>
+                    <td>VESP</td> 
+                    <td>DERMATOLOGIA</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                   <tr>
+                    <td>TEMIS ENAMORADO</td>
+                    <td>VESP</td> 
+                    <td>NEUROL</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>G-DIAZ</td>
+                    <td>VESP</td> 
+                    <td>NEUROL</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>F-DIAZ</td>
+                    <td>VESP</td> 
+                    <td>NEUROL</td>
+                    <td>8</td>
+                    <td> </td>
+                    <td>8</td>
+                    <td> </td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>RITZA CALERO</td>
+                    <td>MAT</td> 
+                    <td>ONCO</td>
+                    <td>16</td> 
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>MIRIAM CHAVEZ</td>
+                    <td>MAT</td> 
+                    <td>ONCO</td>
+                    <td>16</td> 
+                    <td>16</td>
+                    <td></td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>EDGARDO PINEDA</td>
+                    <td>MAT</td> 
+                    <td>ONCO</td>
+                    <td>16</td> 
+                    <td>16</td>
+                    <td>10</td>
+                    <td>16</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>OLVIN REYES</td>
+                    <td>MAT</td> 
+                    <td>ONCO</td>
+                    <td>16</td> 
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                    <td>16</td>
+                  </tr>
+                   <tr>
+                    <td>DARWIN MARTINEZ</td>
+                    <td>VESP</td> 
+                    <td>HEMATOLOGIA</td>
+                    <td>16</td> 
+                    <td>16</td>
+                    <td>16</td>
+                    <td> </td>
+                    <td>16</td>
+                  </tr>
+
+
+                </tbody>
+                </table>
+              </div>
+              <!-- Fin tercera tabla-->
+
+     </main>
+
+         <!-- Optional JavaScript --> 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.4/dist/sweetalert2.all.min.js"></script> 
+                
+    <!--The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
+    <script>
+
+
+        function doSeek3(){
+
+            const tableReg = document.getElementById('tablaEspecialidades');
+            const searchText = document.getElementById('searchItem3').value.toLowerCase();
+            let total = 0;
+            // Recorremos todas las filas con contenido de la tabla
+            for (let i = 1; i < tableReg.rows.length; i++) {
+                // Si el td tiene la clase "noSearch" no se busca en su cntenido
+                if (tableReg.rows[i].classList.contains("noSearch")) {
+                    continue;
+                }
+                let found = false;
+                const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                // Recorremos todas las celdas
+                for (let j = 0; j < cellsOfRow.length && !found; j++) {
+                    const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                    // Buscamos el texto en el contenido de la celda
+                    if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+                        found = true;
+                        total++;
+                    }
+                }
+                if (found) {
+                    tableReg.rows[i].style.display = '';
+                } else {
+                    // si no ha encontrado ninguna coincidencia, esconde la
+                    // fila de la tabla
+                    tableReg.rows[i].style.display = 'none';
+                }
+            }
+            // mostramos las coincidencias
+            const lastTR=tableReg.rows[tableReg.rows.length-1];
+            const td=lastTR.querySelector("td");
+            lastTR.classList.remove("hide", "red");
+            if (searchText == "") {
+                lastTR.classList.add("hide");
+            } 
+        }
+     
+    </script>
+    <!-- FOOTER HERE -->
+    <footer>
+        &copy; &bull; Instituto Hondureño de Seguridad Social &bull; 
+    </footer>
+    <!-- <script src="js/scripts.js"></script> -->
+</body>
+
+</html>
